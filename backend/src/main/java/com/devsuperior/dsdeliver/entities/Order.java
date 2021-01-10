@@ -29,6 +29,18 @@ public class Order implements Serializable{
 	private Instant moment;
 	private OrderStatus status;
 	
+	public Order() {}
+	
+	public Order(Long id, String address, double latitude, double longitude, Instant moment, OrderStatus status) {
+		super();
+		this.id = id;
+		this.address = address;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.moment = moment;
+		this.status = status;
+	}
+	
 	@ManyToMany
 	@JoinTable(name = "tb_order_product",
 		joinColumns = @JoinColumn(name = "order_id"),
